@@ -1,1 +1,1 @@
-web: node node_modules/gulp/bin/gulp build && node app.js
+web: npm run prod
