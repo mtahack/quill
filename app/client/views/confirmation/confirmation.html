@@ -95,10 +95,10 @@
           </div>
 
           <div class="field">
-            <label> Twitter </label>
+            <label> LinkedIn </label>
             <input type="text"
                    name="twitter"
-                   placeholder="https://twitter.com/foobar"
+                   placeholder="https://linkedin.com/in/foo-bar"
                    ng-model="user.confirmation.twitter">
           </div>
 
@@ -119,6 +119,24 @@
           <br>
 
           <div class="divided title">Legal</div>
+
+          <div class="field">
+            <label> Terms & Conditions </label>
+            <p>
+              <a
+                target="_blank"
+                href="https://mtahack.com/mta-hack-2021-terms-and-conditions.pdf">
+                MTA Hack Terms & Conditions
+              </a>
+            </p>
+            <p>
+              By writing my name below, I affirm that I have read and accepted the terms and conditions of MTA Hack 2021.
+            </p>
+            <input type="text"
+                   name="signatureLiabilityWaiver"
+                   placeholder="Your Full Legal Name"
+                   ng-model="user.confirmation.signatureLiability">
+          </div>
 
           <div class="field">
             <label> Code of Conduct </label>
