@@ -127,15 +127,11 @@ controller.sendConfirmationEmail = function(email, callback) {
   };
 
   var locals = {
-    title: 'You\'re in.',
-    subtitle: 'Congrats! You\'ve been accepted to ' + HACKATHON_NAME + '!',
-    description: 'Please make sure you confirm your application by clicking the button below. ' +
-      'By not confirming your application, you will not be able to take part in the hackathon.',
-    actionUrl: ROOT_URL + '/confirmation',
-    actionName: 'Confirm Application'
+    confirmationUrl: ROOT_URL + '/confirmation',
+    slackUrl: 'https://join.slack.com/t/mtahack/shared_invite/zt-p6m3llbp-r8QnMHGfO_Xjxi~po2~x7w'
   };
 
-  sendOne('email-link-action', options, locals, function(err, info) {
+  sendOne('email-confirmation', options, locals, function(err, info) {
     if (err){
       console.log(err);
     }
