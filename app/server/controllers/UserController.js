@@ -627,8 +627,8 @@ UserController.resetPassword = function(token, password, callback){
 /**
  * [ADMIN ONLY]
  *
- * Admit a user.
- * @param  {String}   userId   User id of the admit
+ * Admit a user and send an automatic confirmation email
+ * @param  {String}   id   User id of the admit
  * @param  {String}   user     User doing the admitting
  * @param  {Function} callback args(err, user)
  */
@@ -648,6 +648,16 @@ UserController.admitUser = function(id, user, callback){
         new: true
       },
       callback);
+
+    //Find the user by the ID and send him an email
+    User.findOne(
+      {_id: id},
+      function(err, user){
+        if (err || !user){
+          return callback(err);
+        }
+      Mailer.sendConfirmationEmail(user.email);
+    });
   });
 };
 
